@@ -665,10 +665,13 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 		Timer timer = new Timer(100, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				long tick = GLOW_START_TIME - System.currentTimeMillis();
+				//long tick = GLOW_START_TIME - System.currentTimeMillis();
+				int tick = (int) (GLOW_START_TIME - System.currentTimeMillis());
 				tick = (-1*tick/100);
-				//System.out.println(tick%6);
-				cP.setIcon(cP.getGlow((int)tick%6));
+				//System.out.println("tick"+tick%6);
+				//System.out.println("huh"+((int)tick%6));
+				//cP.setIcon(cP.getGlow((int)tick%6));
+				cP.setIcon(cP.getGlow(tick%6));
 				topGlass.invalidate();
 				topGlass.revalidate();
 				topGlass.repaint();
