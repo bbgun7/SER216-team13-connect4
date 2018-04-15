@@ -635,7 +635,18 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 	//GAME OVER
 	@Override
 	public void gameOver(Player winner, ScoreChart scores, ReadableBoard end) {
-		if(turnNum < 42){
+		if(winner == null){
+			for (GUIPiece piece : pieces) {
+				if(piece != null){
+					piece.setIcon(null);
+					topGlass.remove(piece);
+				}
+			}
+			gui.setWinner("It's a tie!");
+			board.clear();
+			initNewGame();
+			gui.addGameOver();
+		} else {
 			if(game.getCurrentPlayer() == players[0]){
 				gui.setScore1(gui.getScore1()+1);
 			}
@@ -654,7 +665,7 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 					initNewGame();
 					gui.addGameOver();
 					justWon = true;
-		} 
+		}
 	}
 	
 	
