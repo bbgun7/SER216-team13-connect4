@@ -635,7 +635,7 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 	//GAME OVER
 	@Override
 	public void gameOver(Player winner, ScoreChart scores, ReadableBoard end) {
-		if(turnNum < 41){
+		if(turnNum < 42){
 			if(game.getCurrentPlayer() == players[0]){
 				gui.setScore1(gui.getScore1()+1);
 			}
