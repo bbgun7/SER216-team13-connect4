@@ -374,9 +374,15 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 	void dropPiece(){
 		falling = true;
 		final int destination = getTargetY();
+		int augmentedDestination = destination;
+		switch(getTargetY()) {
+			case 150: augmentedDestination *= 8;
+			case 242: augmentedDestination *= 4;
+			case 330: augmentedDestination *= 2;
+		}
 		final long startTime = System.currentTimeMillis();
 		pieces[turnNum].setVisible(true);
-		Timer timer = new Timer((8000/(destination)), new ActionListener() 
+		Timer timer = new Timer((8000/(augmentedDestination)), new ActionListener() 
 		{
 		    @Override
                     public void actionPerformed(ActionEvent e) {
@@ -691,7 +697,7 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 			
 		    
 		});
-		timer.setRepeats(true);
+		timer.setRepeats(false);
 		timer.setCoalesce(true);
 		timer.start();
 	}
