@@ -44,7 +44,6 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 		else{
 			players[1] = new GUIWrapperPlayer(new ComputerPlayer(), this);
 		}
-		setSize(1280, 800);
 		initComponents();
 		this.gui = gui;
 		board = new Board(7,6);
@@ -91,9 +90,9 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 
                 player1NameBox.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
                 player1NameBox.setForeground(new java.awt.Color(255, 255, 255));
-                player1NameBox.setText("player 1");
+                player1NameBox.setText("<html>player 1</html>");
                 add(player1NameBox);
-                player1NameBox.setBounds(1070, 40, 210, 40);
+                player1NameBox.setBounds(1070, 40, 210, 200);
 
                 currentWins.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
                 currentWins.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,9 +102,10 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 
                 pNameDisplay.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
                 pNameDisplay.setForeground(new java.awt.Color(255, 255, 255));
-                pNameDisplay.setText("jLabel2");
+                pNameDisplay.setText("<html>jLabel2</html>");
                 add(pNameDisplay);
-                pNameDisplay.setBounds(1070, 210, 200, 40);
+                pNameDisplay.setBounds(1070, 210, 200, 200);
+//pNameDisplay.setBounds(1070, 210, 200, 40);
 
                 turnDisplay.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
                 turnDisplay.setForeground(new java.awt.Color(255, 255, 255));
@@ -249,9 +249,9 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 
                 player2NameBox.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
                 player2NameBox.setForeground(new java.awt.Color(255, 255, 255));
-                player2NameBox.setText("player 1");
+                player2NameBox.setText("<html>player 1</html>");
                 topGlass.add(player2NameBox);
-                player2NameBox.setBounds(1070, 90, 210, 40);
+                player2NameBox.setBounds(1070, 90, 210, 200);
 
                 add(topGlass);
                 topGlass.setBounds(0, 0, 1280, 800);
@@ -577,7 +577,7 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 					}
 					columnNum = newColumnNum;
 					System.out.println("Turn " + (turnNum+1) +" Started!");
-					pNameDisplay.setText(game.getCurrentPlayer().getName() + "'s turn.");
+					pNameDisplay.setText("<html>" + game.getCurrentPlayer().getName() + "'s turn.</html>");
 					turnDisplay.setText("Round number " +(turnNum/2+1));
 					add(pieces[turnNum]);
 				}
@@ -620,11 +620,11 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 		}
 		add(pieces[turnNum]);
 		pNameDisplay.setForeground(Color.red);
-		pNameDisplay.setText(game.getCurrentPlayer().getName() + "'s turn.");
+		pNameDisplay.setText("<html>" + game.getCurrentPlayer().getName() + "'s turn.</html>");
 		turnDisplay.setForeground(Color.white);
 		turnDisplay.setText("Round number " +(turnNum/2+1));
-		player1NameBox.setText(players[0].getName() + ":    " + gui.getScore1());
-		player2NameBox.setText(players[1].getName() + ":    " + gui.getScore2());
+		player1NameBox.setText("<html>" + players[0].getName() + ":    " + gui.getScore1() + "</html>");
+		player2NameBox.setText("<html>" + players[1].getName() + ":    " + gui.getScore2() + "</html>");
 		setVisible(true);
 	}
 	
