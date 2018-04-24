@@ -12,7 +12,7 @@ public class GameOverPanel extends javax.swing.JPanel {
 		this.gui = gui;
 		setSize(1280, 800);
 		System.out.println("Here!");
-		winnerDisplay.setText(winner);
+		winnerDisplay.setText("<html>" + winner + "</html>");
 		setVisible(true);
 	}
 	
@@ -71,7 +71,7 @@ public class GameOverPanel extends javax.swing.JPanel {
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(winner)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(winnerDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addComponent(winnerDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                                 .addComponent(butPlayAgain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                 .addComponent(labelGameOVer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -87,7 +87,7 @@ public class GameOverPanel extends javax.swing.JPanel {
                                 .addComponent(labelGameOVer)
                                 .addGap(43, 43, 43)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(winnerDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(winnerDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(winner, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(63, 63, 63)
                                 .addComponent(butPlayAgain, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
