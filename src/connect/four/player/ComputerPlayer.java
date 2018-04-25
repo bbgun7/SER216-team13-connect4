@@ -20,6 +20,10 @@ public class ComputerPlayer implements Player {
         m_depth = depth;
         this.easyMode = easyMode;
     }
+    public ComputerPlayer(boolean easyMode) {
+        m_depth = 6;
+        this.easyMode = easyMode;
+    }
     public ComputerPlayer(int depth) {
         m_depth = depth;
         easyMode = false;
@@ -35,6 +39,7 @@ public class ComputerPlayer implements Player {
         	int move = (new Random()).nextInt(l);
         	while(board.getColumnHeight(move) >= m)
         		move = (new Random()).nextInt(l);
+        	//int move = 1;
             board.play(move, this);
         } else {
             Player opponent = getOpponent(board);

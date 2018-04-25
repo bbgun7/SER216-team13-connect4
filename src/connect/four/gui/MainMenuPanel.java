@@ -17,6 +17,7 @@ public class MainMenuPanel extends javax.swing.JPanel {
 	private String name1, name2;
 	GUI gui;
 	private boolean isEnabled;
+	private boolean easyMode;
 	public MainMenuPanel(GUI gui) {
 		initComponents();
 		setSize(1280,800);
@@ -87,7 +88,7 @@ public class MainMenuPanel extends javax.swing.JPanel {
                 jLabel2.setText("Player dos:");
                 
                 //check box
-                check = new JCheckBox("Hard Mode");
+                check = new JCheckBox("Easy Mode");
                 check.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
                 check.setForeground(new java.awt.Color(255, 255, 255));
                 check.setBounds(800,275,200,50);
@@ -206,6 +207,7 @@ public class MainMenuPanel extends javax.swing.JPanel {
 			tfplayer2.setText("Computer");
 			tfplayer2.setEditable(false);
 			isEnabled = true;
+			easyMode = check.isSelected();
 		}
 		else{
 			tfplayer2.setText("Player 2");
@@ -219,6 +221,9 @@ public class MainMenuPanel extends javax.swing.JPanel {
 
 	public boolean getIsEnabled(){
 		return isEnabled;
+	}
+	public boolean getEasyMode() {
+		return easyMode;
 	}
 	
 	

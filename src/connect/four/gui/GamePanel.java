@@ -33,7 +33,7 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 	boolean isComputerEnabled;
 	boolean justWon;
 	
-	public GamePanel(GUI gui, boolean isComputerEnabled) {
+	public GamePanel(GUI gui, boolean isComputerEnabled, boolean easyMode) {
 		//whoPlayed = 1;
 		players = new Player[2];
 		players[0] = new GUIPlayer(gui.getPlayer1Name(), this);
@@ -42,7 +42,7 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 			players[1] = new GUIPlayer(gui.getPlayer2Name(), this);
 		}
 		else{
-			players[1] = new GUIWrapperPlayer(new ComputerPlayer(), this);
+			players[1] = new GUIWrapperPlayer(new ComputerPlayer(easyMode), this);
 		}
 		initComponents();
 		setSize(1280, 800);

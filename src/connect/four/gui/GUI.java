@@ -116,7 +116,7 @@ public class GUI extends javax.swing.JFrame {
 	}
 	
 	void addGamePanel(){
-		gamePanel = new GamePanel(this, mainMenu.getIsEnabled());
+		gamePanel = new GamePanel(this, mainMenu.getIsEnabled(), mainMenu.getEasyMode());
 		add(gamePanel);
 	}
 	
