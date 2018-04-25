@@ -23,9 +23,9 @@ public class GUI extends javax.swing.JFrame {
 	
 	public GUI() {
 		initComponents();
-		setSize(1280,800);
 		score1 = 0;
 		score2 = 0;
+		setSize(1280,800);
 		//gamePanel = new GamePanel(this);
 		mainMenu = new MainMenuPanel(this);
 		add(mainMenu);

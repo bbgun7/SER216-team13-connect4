@@ -45,6 +45,7 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 			players[1] = new GUIWrapperPlayer(new ComputerPlayer(), this);
 		}
 		initComponents();
+		setSize(1280, 800);
 		this.gui = gui;
 		board = new Board(7,6);
 		game = new Game(players,board, 4);
