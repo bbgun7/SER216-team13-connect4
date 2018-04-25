@@ -87,10 +87,11 @@ public class MainMenuPanel extends javax.swing.JPanel {
                 jLabel2.setText("Player dos:");
                 
                 //check box
-                check = new JCheckBox("check");
+                check = new JCheckBox("Hard Mode");
                 check.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
                 check.setForeground(new java.awt.Color(255, 255, 255));
-                check.setBounds(100, 100, 50, 50);
+                check.setBounds(800,275,200,50);
+                //x,y,width,height
                 add(check);
                 
                 
