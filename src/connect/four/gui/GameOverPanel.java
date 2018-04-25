@@ -108,6 +108,7 @@ public class GameOverPanel extends javax.swing.JPanel {
         private void butMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butMainMenuActionPerformed
 		gui.remove(this);
 		gui.addMainMenu();
+		
 		gui.revalidate();
 		gui.repaint();
         }//GEN-LAST:event_butMainMenuActionPerformed

@@ -23,12 +23,13 @@ public class GUI extends javax.swing.JFrame {
 	
 	public GUI() {
 		initComponents();
+		setSize(1280,800);
 		score1 = 0;
 		score2 = 0;
 		//gamePanel = new GamePanel(this);
 		mainMenu = new MainMenuPanel(this);
 		add(mainMenu);
-		
+		pack();
 	}
 
 	
@@ -127,6 +128,8 @@ public class GUI extends javax.swing.JFrame {
 		score2 = 0;
 		mainMenu = new MainMenuPanel(this);
 		add(mainMenu);
+		setSize(1280,800);
+		
 	}
 	
 	void addGameOver(){

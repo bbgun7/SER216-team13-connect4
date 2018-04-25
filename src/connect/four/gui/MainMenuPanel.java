@@ -7,6 +7,9 @@
 package connect.four.gui;
 
 import connect.four.Game;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 
 public class MainMenuPanel extends javax.swing.JPanel {
@@ -14,13 +17,11 @@ public class MainMenuPanel extends javax.swing.JPanel {
 	private String name1, name2;
 	GUI gui;
 	private boolean isEnabled;
-	
 	public MainMenuPanel(GUI gui) {
 		initComponents();
 		setSize(1280,800);
 		this.gui = gui;
 		isEnabled = false;
-		
 		setVisible(true);
 	}
 
@@ -32,43 +33,68 @@ public class MainMenuPanel extends javax.swing.JPanel {
 	@SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
-
+				
+		        //title
                 title = new javax.swing.JLabel();
+                
+                //check button
+                check = new javax.swing.JCheckBox();
+                
+                //type ins
                 tfplayer1 = new javax.swing.JTextField();
                 tfplayer2 = new javax.swing.JTextField();
+                
+                //labels
                 jLabel1 = new javax.swing.JLabel();
-                jLabel2 = new javax.swing.JLabel();
+                jLabel2 = new javax.swing.JLabel();  
+                
+                //play button
                 butPlay = new javax.swing.JButton();
+                
+                //computer button
                 jtComputerToggle = new javax.swing.JToggleButton();
 
                 setBackground(new java.awt.Color(0, 0, 0));
-
+                
+                //title
                 title.setFont(new java.awt.Font("Lucida Grande", 0, 48)); // NOI18N
                 title.setForeground(new java.awt.Color(255, 255, 255));
                 title.setText("Connect Four");
-
+                
+                //player1 type in 
                 tfplayer1.setText("Player 1");
                 tfplayer1.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 tfplayer1ActionPerformed(evt);
                         }
                 });
-
+                //player2 type in 
                 tfplayer2.setText("Player 2");
                 tfplayer2.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 tfplayer2ActionPerformed(evt);
                         }
                 });
-
+                
+                //player1 label 
                 jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
                 jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-                jLabel1.setText("Player 1:");
-
+                jLabel1.setText("Player uno:");
+                
+                //player2 label
                 jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
                 jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-                jLabel2.setText("Player 2:");
-
+                jLabel2.setText("Player dos:");
+                
+                //check box
+                check = new JCheckBox("check");
+                check.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+                check.setForeground(new java.awt.Color(255, 255, 255));
+                check.setBounds(100, 100, 50, 50);
+                add(check);
+                
+                
+                //play button
                 butPlay.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
                 butPlay.setText("PLAY");
                 butPlay.addActionListener(new java.awt.event.ActionListener() {
@@ -76,7 +102,8 @@ public class MainMenuPanel extends javax.swing.JPanel {
                                 butPlayActionPerformed(evt);
                         }
                 });
-
+                
+                //computer button
                 jtComputerToggle.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
                 jtComputerToggle.setText("Play Against Computer");
                 jtComputerToggle.addActionListener(new java.awt.event.ActionListener() {
@@ -84,53 +111,75 @@ public class MainMenuPanel extends javax.swing.JPanel {
                                 jtComputerToggleActionPerformed(evt);
                         }
                 });
-
+                
+                //layout
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
                 this.setLayout(layout);
+                
+                //horizontal
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        //for title
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(title)
-                                .addGap(471, 471, 471))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(title)
+                        .addGap(471, 471, 471))
+                        
                         .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(378, 378, 378)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                                .addComponent(jLabel1)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(tfplayer1))
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(jLabel2)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(tfplayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(524, 524, 524)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(butPlay, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                                                        .addComponent(jtComputerToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                                .addContainerGap(379, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                        .addGap(378, 378, 378)
+                          
+                        //player1 label
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                         
+                        //player1 write in
+                         .addComponent(tfplayer1))
+                         .addGroup(layout.createSequentialGroup()
+                         .addComponent(jLabel2)
+                         .addGap(18, 18, 18)
+                         
+                          //player2 write in                                   
+                         .addComponent(tfplayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                         .addGroup(layout.createSequentialGroup()
+                         .addGap(524, 524, 524)
+                                                
+                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                         .addComponent(butPlay, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                         .addComponent(jtComputerToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                         .addContainerGap(379, Short.MAX_VALUE))
                 );
+                //vertical
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addComponent(title)
-                                .addGap(59, 59, 59)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(tfplayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel1))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(tfplayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel2))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtComputerToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(45, 45, 45)
-                                .addComponent(butPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(352, Short.MAX_VALUE))
+                        .addGap(38, 38, 38)
+                                
+                        .addComponent(title)
+                        .addGap(59, 59, 59)
+                         
+                        //for player 1
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tfplayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1))
+                        .addGap(18, 18, 18)
+                          
+                        //for player 2
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tfplayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtComputerToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                                
+//                                .addComponent(check, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+//                                .addGap(50, 50, 50)
+                        //for play button      
+                        .addComponent(butPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(150, Short.MAX_VALUE))
                 );
         }// </editor-fold>//GEN-END:initComponents
 
@@ -180,6 +229,7 @@ public class MainMenuPanel extends javax.swing.JPanel {
         private javax.swing.JToggleButton jtComputerToggle;
         private javax.swing.JTextField tfplayer1;
         private javax.swing.JTextField tfplayer2;
+        private javax.swing.JCheckBox check;
         private javax.swing.JLabel title;
         // End of variables declaration//GEN-END:variables
 }
