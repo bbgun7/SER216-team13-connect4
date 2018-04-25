@@ -11,11 +11,18 @@ import java.util.Random;
 
 public class ComputerPlayer implements Player {
     int m_depth;
+    boolean easyMode;
     public ComputerPlayer() {
         m_depth = 6;
+        easyMode = false;
+    }
+    public ComputerPlayer(int depth, boolean easyMode) {
+        m_depth = depth;
+        this.easyMode = easyMode;
     }
     public ComputerPlayer(int depth) {
         m_depth = depth;
+        easyMode = false;
     }
     @Override public String getName() {
         return "Computer";
@@ -23,9 +30,12 @@ public class ComputerPlayer implements Player {
 
     @Override public void performPlay(ReadWritableBoard board) {
         int l = board.getWidth();
-	int m = board.getHeight();
-        if (board.getMoveCount() == 0) {
-            board.play((new Random()).nextInt(l), this);
+        int m = board.getHeight();
+        if (board.getMoveCount() == 0 || easyMode) {
+        	int move = (new Random()).nextInt(l);
+        	while(board.getColumnHeight(move) >= m)
+        		move = (new Random()).nextInt(l);
+            board.play(move, this);
         } else {
             Player opponent = getOpponent(board);
             int maxMove = (new Random()).nextInt(l);
@@ -40,9 +50,9 @@ public class ComputerPlayer implements Player {
                 }
                 scores[i] = iScore;
             }
-	    while (board.whoPlayed(maxMove, m-1) != null) {
-                maxMove = (maxMove+1)%l;
-	    }
+            while (board.whoPlayed(maxMove, m-1) != null) {
+            	maxMove = (maxMove+1)%l;
+            }
             System.out.println(Arrays.toString(scores));
             board.play(maxMove, this);
         }
