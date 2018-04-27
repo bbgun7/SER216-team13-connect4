@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package connect.four.gui;
 
 import connect.four.*;
@@ -332,31 +326,45 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
         }//GEN-LAST:event_formMouseClicked
 
         private void col1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_col1MouseClicked
-                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) turn();
+                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) {
+					turn();
+				}
         }//GEN-LAST:event_col1MouseClicked
 
         private void col2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_col2MouseClicked
-                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) turn();
+                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) {
+					turn();
+				}
         }//GEN-LAST:event_col2MouseClicked
 
         private void col3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_col3MouseClicked
-                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) turn();
+                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) {
+					turn();
+				}
         }//GEN-LAST:event_col3MouseClicked
 
         private void col4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_col4MouseClicked
-                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) turn();
+                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) {
+					turn();
+				}
         }//GEN-LAST:event_col4MouseClicked
 
         private void col6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_col6MouseClicked
-                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) turn();
+                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) {
+					turn();
+				}
         }//GEN-LAST:event_col6MouseClicked
 
         private void col7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_col7MouseClicked
-                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) turn();
+                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) {
+					turn();
+				}
         }//GEN-LAST:event_col7MouseClicked
 
         private void col5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_col5MouseClicked
-                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) turn();
+                if (game.getCurrentPlayer() != players[1] || !isComputerEnabled) {
+					turn();
+				}
         }//GEN-LAST:event_col5MouseClicked
 
         private void topGlassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topGlassMouseClicked
@@ -380,6 +388,8 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 			case 150: augmentedDestination *= 8;
 			case 242: augmentedDestination *= 4;
 			case 330: augmentedDestination *= 2;
+		default:
+			break;
 		}
 		final long startTime = System.currentTimeMillis();
 		pieces[turnNum].setVisible(true);
@@ -502,6 +512,8 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 			case 6:
 				xPos = 738;
 				break;
+		default:
+			break;
 			}
 		
 		
@@ -539,6 +551,8 @@ public class GamePanel extends javax.swing.JPanel implements ScoreChart.Listener
 			case 6:
 				xPos = 738;
 				break;
+		default:
+			break;
 			}
 		
 		newDrawPos = xPos;

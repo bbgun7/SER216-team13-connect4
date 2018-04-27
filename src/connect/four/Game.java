@@ -1,4 +1,3 @@
-
 package connect.four;
 
 import connect.four.player.Player;
@@ -42,7 +41,9 @@ public class Game implements ScoreChart {
         int pos = -1;
         int l = m_players.length;
         for (int i = 0; i != l; ++i) {
-            if (m_players[i] == p) pos = i;
+            if (m_players[i] == p) {
+				pos = i;
+			}
         }
         return m_scores[pos];
     }

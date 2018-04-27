@@ -37,8 +37,9 @@ public class ComputerPlayer implements Player {
         int m = board.getHeight();
         if (board.getMoveCount() == 0 || easyMode) {
         	int move = (new Random()).nextInt(l);
-        	while(board.getColumnHeight(move) >= m)
-        		move = (new Random()).nextInt(l);
+        	while(board.getColumnHeight(move) >= m) {
+				move = (new Random()).nextInt(l);
+			}
         	//int move = 1;
             board.play(move, this);
         } else {
@@ -47,7 +48,9 @@ public class ComputerPlayer implements Player {
             long maxScore = scoreMove(maxMove, m_depth, board, opponent);
             long[] scores = new long[l];
             for (int i = 0; i != l; ++i) {
-                if (board.whoPlayed(i, m-1) != null) continue;
+                if (board.whoPlayed(i, m-1) != null) {
+					continue;
+				}
                 long iScore = scoreMove(i, m_depth, board, opponent);
                 if (iScore > maxScore) {
                     maxMove = i;
@@ -65,7 +68,9 @@ public class ComputerPlayer implements Player {
 
     private long scoreMove(int x, int depth, ReadableBoard board, Player opponent) {
         int m = board.getHeight();
-        if (board.whoPlayed(x, m-1) != null) return 0;
+        if (board.whoPlayed(x, m-1) != null) {
+			return 0;
+		}
         Board myMove = new Board(board);
         myMove.play(x, this);
         int l = myMove.getWidth();
@@ -74,7 +79,9 @@ public class ComputerPlayer implements Player {
             score += Math.pow(l, depth);
         } else if (depth != 0) {
             for (int i = 0; i != l; ++i) {
-                if (myMove.whoPlayed(i, m-1) != null) continue;
+                if (myMove.whoPlayed(i, m-1) != null) {
+					continue;
+				}
                 Board nextMove = new Board(myMove);
                 nextMove.play(i, opponent);
                 if (Game.detectWinner(nextMove, 4) == opponent) {
